@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    body{
+      font-size: large;
+      text-align: center;
+      color: maroon;
+      background-color: antiquewhite;
+    }
+   .neon{
+    font-size:xx-large;
+    text-align: center;
+    color: maroon;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5p yellow,0 0 10px yellow,0 0 20px yellow,0 0 40px yellow,0 0  80px yellow;
+   }
+   .btn{
+    padding: 14px 40px;
+    background-color:maroon;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    width:10;
+    margin: auto;
+   }
+  </style>
+  <body>
+    <div class="neon">
+      <u>
+      <span class="text" data-text="BILLING SYSTEM">BILLING SYSTEM</span>
+      </u>
+      <span class="gradient"></span>
+      <span class="spotlight"></span>
+    </div>
+    <div class="container">
+      <div class="product">
+        <h3>ITEM 1</h3>
+        <input type="text"id="name1"placeholder="Item Name">
+        <input type="number" id="price1" placeholder="Price" value="₹">
+        <input type="number" id="qty1" placeholder="Quantity" value=" ">
+      </div>
+      <div class="product">
+        <h3>ITEM 2</h3>
+        <input type="text"id="name2"placeholder="Item Name">
+        <input type="number" id="price2" placeholder="Price" value="₹">
+        <input type="number" id="qty2" placeholder="Quantity" value=" ">
+      </div>
+      <div class="product">
+        <h3>ITEM 3</h3>
+        <input type="text"id="name3"placeholder="Item Name">
+        <input type="number" id="price3" placeholder="Price" value="₹">
+        <input type="number" id="qty3" placeholder="Quantity" value=" ">
+      </div>
+    </div>
+    <button class="btn" onclick="Totalcalculation()">Totalcalculation</button>
+    <div class="TOTAL" id="TotalAmount">TOTAL: ₹ </div>
+    <button type="button" onclick="PayHere()" class="btn">
+      <a href="Pay.html"><b>Pay Here</b></a>
+     </button>
+  </body>
+  <script>
+    function Totalcalculation(){
+      const price1 =parseFloat
+      (document.getElementById('price1').value) || 0;
+      const qty1 =parseFloat
+      (document.getElementById('qty1').value) || 0;
+      const price2 =parseFloat
+      (document.getElementById('price2').value) || 0;
+      const qty2 =parseFloat
+      (document.getElementById('qty2').value) || 0;
+      const price3 =parseFloat
+      (document.getElementById('price3').value) || 0;
+      const qty3 =parseFloat
+      (document.getElementById('qty3').value) || 0;
+
+      const TOTAL=(price1 * qty1) + (price2 * qty2) + (price3 * qty3);
+
+      document.getElementById('TotalAmount').innerText='TOTAL: ₹' + TOTAL.toFixed(2);
+    }
+  </script>
